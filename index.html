@@ -12,8 +12,12 @@
             border:1px solid black;
         }
         h1{
-            text-align:center;
             font-size:50px;
+        }
+        h1, h2{
+            text-align:center;
+            break-inside: avoid-column;
+            –webkit-column-break-inside: avoid;
         }
         article>*{
             margin:8px;
@@ -50,17 +54,15 @@
             text-align:center;
             background-color:gray;
         }
-        p.break{
-            break-after: column;  
-            -webkit-column-break-before: always;
-        }
         #second-text-container{
             column-width: 500px;
         }
         /*Whyd doesnt it work?*/
+        /* I see -'Firefox does not support column breaks at all at this time.' Source: page 11, multicolumn.pdf*/
         h2{
             break-before: column;
             -webkit-column-break-before: always;
+            /*It causes pargraphs in second container to overflow as it causes the h2s to appear in new column*/
         }
     </style>
 </head>
